@@ -6,6 +6,12 @@
 * In the piece of code below we simulate that the procedure has got a list of two 
 * view name which exist in the data dictionary, cast the list to a anonymous 
 * table, join it with ALL_OBJECTS, and print the owner of the given objects.
+*
+* The principle is to instantiate an object type which is a collection. For 
+* convenience I chose SYS.RE$NAME_ARRAY which should exists in every Oracle DB.
+* Next we populate the collection. Then we use CAST to transform the collection 
+* to a relational entity. If you want to have more than one column in this 
+* cast table, you need to define your own object types: RECORD and TABLE
 */
 
 set serveroutput on 

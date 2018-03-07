@@ -1,3 +1,5 @@
+-- SQLPLUS and many other Oracle client tools can do the job nicely. But suppose you want to 
+-- include the information in an HTML mail which is composed in a stored procedure?
 -- generated a td element with the columns COLUMN_NAME, DATA_TYPE, NULLABLE, COMMENTS
 
 with magic as ( 

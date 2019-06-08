@@ -14,6 +14,16 @@
 * cast table, you need to define your own object types: RECORD and TABLE
 */
 
+--
+-- UPDATE: with ORA_MINING_VARCHAR2_NT, things have become much simpler. Below
+-- is an usage example:
+-- 
+-- SELECT sel.column_value as name, e.salary 
+-- FROM TABLE ( ORA_MINING_VARCHAR2_NT( 'King', 'Smith', 'Brown' ) ) sel
+-- LEFT JOIN emp e ON e.ename = sel.column_value
+-- ;
+-- So the code below should be regarded just as a mental exercise from the past
+--
 set serveroutput on 
 
 declare 

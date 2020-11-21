@@ -228,3 +228,4 @@ END;
 /
 show errors
 
+grant execute on qwhat_is to public;

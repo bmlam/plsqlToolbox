@@ -61,7 +61,7 @@ create or replace PACKAGE BODY test_pkg_a IS
       l_loop_ix := l_loop_ix + 1;
       l_stack_line_bak := l_stack_line;
     END LOOP;
-    l_logging_line :=  regexp_replace( l_stack_line_bak, '^0x([a-f[:digit:]]+) +([[:digit:]]+) +([[:alnum:]_\. ]+)', '\3:\2');Ø
+    l_logging_line :=  regexp_replace( l_stack_line_bak, '^0x([a-f[:digit:]]+) +([[:digit:]]+) +([[:alnum:]_\. ]+)', '\3:\2');
     dbms_output.put_line( '************** Call stack line: '||l_logging_line);
 
   END the_proc;

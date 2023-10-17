@@ -37,4 +37,3 @@ END;
 
 show error
 
-grant execute on google to bic_lib, dw, dw_cl, nba_prof ;

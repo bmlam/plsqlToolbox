@@ -18,7 +18,7 @@ column spool_path new_val spool_path
 SET SCAN ON DEFINE ON
 
 
-SELECT 'c:\temp\sql_monitor_report-'||sys_context( 'userenv', 'db_name' ) AS sub_dir
+SELECT 'D:\temp\sql_monitor_report-'||sys_context( 'userenv', 'db_name' ) AS sub_dir
   , TRIM(serial#) as serial_nr 
 FROM gv$session
 WHERE inst_id = &pi_inst_id 
@@ -70,22 +70,8 @@ FROM dual;
 
 spool off
 
--- On 9.Nov.2020 got this: 
---ORA-12850: Could not allocate slaves on all specified instances: 2 needed, 0 allocated
---ORA-06512: at "SYS.DBMS_SQLTUNE", line 18334
---ORA-06512: at "SYS.DBMS_SQLTUNE", line 13676
---ORA-06512: at "SYS.DBMS_SQLTUNE", line 18430
---ORA-06512: at "SYS.DBMS_SQLTUNE", line 18761
---ORA-06512: at line 1
---12850. 00000 -  "Could not allocate slaves on all specified instances: %s needed, %s allocated"
---*Cause:    When executing a query on a gv$ fixed view, one or more
---           instances failed to allocate a slave to process query.
---*Action:   Check trace output for instances on which slaves failed to start.
---           GV$ query can only proceed if slaves can be allocated on all
---           instances.
 
 set termout on feedback on heading on 
 
 prompt Please check output file &spool_path
-
 
